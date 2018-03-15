@@ -37,9 +37,10 @@ async def on_ready():
 @client.event
 async def on_message(message):
 	# make a small announcement in the current channel
-	if message.content.lower().startswith("i'm "):
-		await client.send_message(message.channel, content='Hi {}, i\'m Dad'.format(message.content[4:]))
-	if message.content.lower().startswith("where's @dad bot"):
-		await client.send_message(message.channel, content='Buying cigarettes')
+    if message.content.lower().startswith("i'm "):
+        await client.send_message(message.channel, content='Hi {}, i\'m Dad'.format(message.content[4:]))
+
+    if message.content.lower().startswith("where's "):
+        await client.send_message(message.channel, content='Buying cigarettes')
 
 client.run(str(api_key)) # Send API key from opened file
